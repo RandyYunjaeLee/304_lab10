@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link rel="stylesheet" href="bootstrap.min.css">
 <head>
         <title>Totally Legit Game Keys</title>
 </head>
 <body>
-<h1 align="center">Welcome Totally Legit Game Keys</h1>
+<h1 align="center">Welcome to Totally Legit Game Keys</h1>
 
 <h2 align="center"><a href="login.jsp">Login</a></h2>
 
