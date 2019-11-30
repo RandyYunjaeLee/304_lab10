@@ -12,8 +12,6 @@
 <%@ page import="java.text.NumberFormat" %>
 <%@ include file="jdbc.jsp" %>
 <%
-
-// TODO: Write SQL query that prints out total order amount by day
 String sql = "SELECT orderDate, totalAmount FROM ordersummary ORDER BY orderDate DESC" ;
 String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_rlopez;";
 String uid = "rlopez";
@@ -58,7 +56,33 @@ catch (SQLException ex) {
 	out.println(ex);
 }
 %>
-
+<form method="get" action="admin.jsp">
+<p>Product Name</p>
+<input type="text" name="product name" size="50">
+<p>Product Price</p>
+<input type="text" name="product price" size="50">
+<p>Category Id</p>
+<input type="text" name="category id" size="50">
+<p>Product Description</p>
+<input type="text" name="product description" size="50">
+<input type="submit" value="Submit"><input type="reset" value="Reset"> 
+</form>
+<%if(request.getParameter("product name")!=null)
+	try ( Connection con = DriverManager.getConnection(url, uid, pw);)
+	{
+		sql = "INSERT INTO product (productName, productPrice, productDesc, categoryId) VALUES (?,?,?,?)";
+		PreparedStatement stmt = con.prepareStatement(sql);
+		stmt.setString(1,request.getParameter("product name"));
+		stmt.setString(2,request.getParameter("product price"));
+		stmt.setString(4,request.getParameter("category id"));
+		stmt.setString(3,request.getParameter("product description"));
+		stmt.execute();
+		out.print("Product Added");
+	}
+	catch (SQLException ex) {
+		out.println(ex);
+	}
+%>
 </body>
 </html>
 

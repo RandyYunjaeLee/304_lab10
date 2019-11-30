@@ -68,6 +68,16 @@ public class LoadData
 	        	ByteArrayInputStream bais = new ByteArrayInputStream(byteImage);
 	        	pstmt.setBinaryStream(1, bais, byteImage.length);
 	        	pstmt.executeUpdate();
+	        	image = ImageIO.read(new File("WebContent/img/wow.png"));
+	        	b = new ByteArrayOutputStream();
+	        	ImageIO.write(image, "png", b);
+	        	b.flush();
+	        	byteImage = b.toByteArray();
+	        	b.close();
+	        	pstmt = con.prepareStatement("UPDATE Product SET productImage = ? WHERE ProductId = 8;");
+	        	bais = new ByteArrayInputStream(byteImage);
+	        	pstmt.setBinaryStream(1, bais, byteImage.length);
+	        	pstmt.executeUpdate();
 	        	pstmt.close();
             }
             catch (Exception e)
