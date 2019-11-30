@@ -38,7 +38,7 @@ try{
 	rst.next();
 	out.print("<h3>Customer Profile</h3>"
 			+"<table border=1>"+
-			"<tr><th>Id</th><td>2</td></tr>"+
+			"<tr><th>Id</th><td>"+rst.getString("customerId")+"</td></tr>"+
 			"<tr><th>First Name</th><td>"+rst.getString("firstName")+"</td></tr>"+
 			"<tr><th>Last Name</th><td>"+rst.getString("lastName")+"</td></tr>"+
 			"<tr><th>Email</th><td>"+rst.getString("email")+"</td></tr>"+
@@ -50,6 +50,7 @@ try{
 			"<tr><th>Country</th><td>"+rst.getString("country")+"</td></tr>"+
 			"<tr><th>User id</th><td>"+rst.getString("userid")+"</td></tr>"+
 			"</table>");
+	out.print("<div><a href = updatInfo.jsp?= + rst.getString(customerId)>update your information</a></div>");
 	con.close();
 }
 catch (SQLException ex) {

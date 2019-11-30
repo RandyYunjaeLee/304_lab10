@@ -27,7 +27,7 @@
 	if (name.equals("")) 
 	{
 		out.println("<h2>All Products</h2>");
-		sql = "SELECT productId, productName, productPrice FROM Product";
+		sql = "SELECT productId, productName, productPrice, productImageUrl, productImage FROM Product";
 	} 
 	else 
 	{
@@ -58,9 +58,19 @@
 			pstmt.setString(1, name);
 		ResultSet rst = pstmt.executeQuery();
 		out.println("<table><tr><th></th><th>Product Name</th><th>Price</th></tr>");
+		
 		while (rst.next()) 
 		{
-			out.print("<tr><td>"+rst.getInt(1)+"</td><td><a href=\"addcart.jsp?id=" + rst.getInt(1) + "&name=" + rst.getString(2)
+			out.print("<tr><td>"+rst.getInt(1)+"</td><td>");
+			if(rst.getString("productImageURL")!=null){
+				out.print("<img src = " + rst.getString("productImageURL")+" width = 300>");
+			}
+			String Try = rst.getString("productImage");
+			name = rst.getString(2);
+			if(Try!=null){
+				out.print("<img src = displayImage.jsp?id=" + rst.getString("productId")+" width = 300>");
+			}
+			out.print("</td><td><a href=\"addcart.jsp?id=" + rst.getInt(1) + "&name=" + rst.getString(2)
 					+ "&price=" + rst.getDouble(3) + "\">Add to Cart</a></td>");
 			if(rst.getDouble(3)<=0){
 				out.println("<td><a href=product.jsp?id=" + rst.getInt(1) + ">" + rst.getString(2) + "</a></td>" + "<td>Free</td></tr>");
