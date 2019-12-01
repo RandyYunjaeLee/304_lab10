@@ -4,6 +4,7 @@
 <%@ page import="java.text.NumberFormat" %>
 <%@ page import="java.util.Map" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF8"%>
+<%@ include file="jdbc.jsp" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,12 +45,14 @@ else
 		out.print("<td align=\"right\">"+currFormat.format(pr*qty)+"</td></tr>");
 		out.println("</tr>");
 		total = total +pr*qty;
+		
 	}
 	out.println("<tr><td colspan=\"4\" align=\"right\"><b>Order Total</b></td>"
 			+"<td align=\"right\">"+currFormat.format(total)+"</td></tr>");
 	out.println("</table>");
 
 	out.println("<h2><a href=\"checkout.jsp\">Check Out</a></h2>");
+	
 }
 %>
 <h2><a href="listprod.jsp">Continue Shopping</a></h2>
