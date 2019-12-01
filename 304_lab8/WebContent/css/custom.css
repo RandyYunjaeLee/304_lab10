@@ -8,6 +8,10 @@ h1 {
 	font-size: 50px;
 }
 
+a {
+	color: rgba(222, 214, 214, 0.9) !important;
+}
+
 .navbar{
 	background: #1c1f23 !important;
 }

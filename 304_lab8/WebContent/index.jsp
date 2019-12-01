@@ -11,11 +11,7 @@
 <body>
 <h1 align="center">Welcome to Totally Legit Game Keys</h1>
 
-<nav body class="navbar navbar-expand-lg navbar-light bg-light">
-
-	<a class="navbar-brand" href="listprod.jsp">Begin Shopping</a>
-
-	<a class="navbar-brand" href="listorder.jsp">List All Orders</a>
+<nav body align="right" class="navbar navbar-expand-lg navbar-light bg-light">
 
 	<a class="navbar-brand" href="customer.jsp">Customer Info</a>
 
@@ -26,6 +22,9 @@
 	<a class="navbar-brand" href="logout.jsp">Log out</a>
 </nav>
 
+<h2 align="center"><a href="listprod.jsp">Begin Shopping</a></h2>
+
+<h2 align="center"><a href="listorder.jsp">List All Orders</a></h2>
 <%
 	String userName = (String) session.getAttribute("authenticatedUser");
 	if(userName!=null)
