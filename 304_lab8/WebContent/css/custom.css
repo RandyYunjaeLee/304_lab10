@@ -1,0 +1,19 @@
+body {
+	background-color: #6d6c6c;
+}
+
+h1 {
+	font-family: "Impact", Charcoal, sans-serif;
+	color: #f95454;
+	font-size: 50px;
+}
+
+.navbar{
+	background: #1c1f23 !important;
+}
+
+.navbar-brand{
+	color: rgba(222, 214, 214, 0.9) !important;
+	border-left: 2px solid rgba(222, 214, 214, 0.9) !important;
+	border-right: 2px solid rgba(222, 214, 214, 0.9) !important; 
+}
