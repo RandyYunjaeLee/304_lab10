@@ -82,6 +82,7 @@ catch (SQLException ex) {
 	catch (SQLException ex) {
 		out.println(ex);
 	}
+out.print("<br></br><a href=\"index.jsp\">Home</a>");
 %>
 </body>
 </html>

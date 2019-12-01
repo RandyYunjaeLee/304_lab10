@@ -20,7 +20,6 @@ String sql = "SELECT * FROM customer WHERE userid = ?";
 String url = "jdbc:sqlserver://sql04.ok.ubc.ca:1433;DatabaseName=db_rlopez;";
 String uid = "rlopez";
 String pw = "31148588";
-System.out.println(sql);
 try
 {	// Load driver class
 	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
@@ -50,8 +49,9 @@ try{
 			"<tr><th>Country</th><td>"+rst.getString("country")+"</td></tr>"+
 			"<tr><th>User id</th><td>"+rst.getString("userid")+"</td></tr>"+
 			"</table>");
-	out.print("<div><a href = updatInfo.jsp?= + rst.getString(customerId)>update your information</a></div>");
+	out.print("<div><a href = updateInfo.jsp?= + rst.getString(customerId)>update your information</a></div>");
 	con.close();
+	out.print("<br></br><a href=\"index.jsp\">Home</a>");
 }
 catch (SQLException ex) {
 	out.println(ex);

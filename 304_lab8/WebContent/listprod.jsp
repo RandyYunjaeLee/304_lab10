@@ -57,7 +57,7 @@
 		if (hasParameter)
 			pstmt.setString(1, name);
 		ResultSet rst = pstmt.executeQuery();
-		out.println("<table><tr><th></th><th>Product Name</th><th>Price</th></tr>");
+		out.println("<table><tr><th>Product Id</th><th></th><th></th><th>Product Name</th><th>Price</th></tr>");
 		
 		while (rst.next()) 
 		{
